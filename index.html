@@ -7,6 +7,13 @@
 <body>
 </body>
 <script>
+     if (window.location.hash) {
+            var hash = window.location.hash.substring(1);
+            if (title && hash) {
+                title.value = decodeURIComponent(hash);
+                parse();
+            }
+        }
 function parse() {
             var yohoho = document.querySelector('#yohoho');
             if (title && title.value && xkinobot) {
