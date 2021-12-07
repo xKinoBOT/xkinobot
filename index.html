@@ -1,108 +1,14 @@
 <!doctype html>
 <head>
-    <div id="yohoho" data-tv="1" data-resize="1"></div>
-    <script src="//yohoho.cc/yo.js"></script>
-    <link rel="stylesheet" href="style.css">
+        <div id="yohoho" style="display: flex;" data-kinopoisk="span"> </div>
+    <script src="https://yohoho.cc/yo.js"></script>
+    <link rel="stylesheet" href="style.css"></div>
+        <script>
+        window.onload = function() {
+            var dbt = window.location.hash.split('#')[1]
+            document.querySelector('#yohoho').setAttribute('data-kinopoisk', dbt)
+}
+    </script>
 </head>
 <body>
 </body>
-<script>
-        (function flashWord() {
-            var i = 0;
-            function run(item) {
-                var t = setTimeout(function () {
-                    clearTimeout(t);
-                    document.querySelector('.index-seo').innerHTML = seo.replace(new RegExp(' ' + item + ' ', 'g'), ' <span style="color: #fff">' + item + '</span> ');
-                    if (items.length) {
-                        i = getRandom(0, items.length - 1);
-                        run(items[i].replace(/[^A-Za-zА-Яа-яёЁ0-9]/gim, ''));
-                    }
-                }, 100);
-            }
-            function getRandom(min, max) {
-                min = Math.ceil(min);
-                max = Math.floor(max);
-                return Math.floor(Math.random() * (max - min + 1)) + min;
-            }
-            run(items[i]);
-        })();
-
-        (function countMovies() {
-            var date = new Date();
-            var year = date.getUTCFullYear();
-            var month = date.getUTCMonth() + 1;
-            var day = date.getUTCDate();
-            var hours = date.getUTCHours();
-            var minutes = date.getUTCMinutes();
-            var seconds = date.getUTCSeconds();
-            var total = ((year - 2014) * 121680) + (month * 10140) + (day * 338) + (hours * 14) + minutes + seconds;
-            document.querySelector('#count').innerHTML = (total + '').replace(/([0-9]{3})([0-9]{3})/, '$1 $2');
-            setInterval(function () {
-                total += Math.floor(Math.random() * 3);
-                document.querySelector('#count').innerHTML = (total + '').replace(/([0-9]{3})([0-9]{3})/, '$1 $2');
-            }, 1000);
-        })();
-
-        var search = document.querySelector('#search');
-        var title = document.querySelector('#search-title');
-
-        if (window.location.hash) {
-            var hash = window.location.hash.substring(1);
-            if (title && hash) {
-                title.value = decodeURIComponent(hash);
-                parse();
-            }
-        }
-
-        if (search) {
-            search.addEventListener('click', function () {
-                return parse();
-            });
-        }
-
-        if (title) {
-            title.addEventListener('keyup', function (event) {
-                event.preventDefault();
-                if (event.keyCode === 13) {
-                    return parse();
-                }
-            });
-        }
-
-        function parse() {
-            var yohoho = document.querySelector('#yohoho');
-            if (title && title.value && yohoho) {
-                if (/kinopoisk\.ru/i.test(title.value)) {
-                    var exec = /(film\/|movie\/).*?([0-9]{3,7})\//gi.exec(title.value);
-                    if (exec && exec[2]) {
-                        yohoho.dataset.kinopoisk = exec[2];
-                        if (window.location.hostname === 'xkinobot.github.io') {
-                            window.location.href = 'https://xkinobot.github.io/#' + yohoho.dataset.kinopoisk;
-                            return;
-                        }
-                        window.location.hash = '#' + yohoho.dataset.kinopoisk;
-                        document.title = 'КиноПоиск: ' + yohoho.dataset.kinopoisk;
-                    }
-                } else if (/^\d+$/.test(title.value)) {
-                    yohoho.dataset.kinopoisk = title.value;
-                    if (window.location.hostname === 'xkinobot.github.io') {
-                        window.location.href = 'https://xkinobot.github.io/#' + yohoho.dataset.kinopoisk;
-                        return;
-                    }
-                    window.location.hash = '#' + yohoho.dataset.kinopoisk;
-                    document.title = 'КиноПоиск: ' + yohoho.dataset.kinopoisk;
-                } else {
-                    yohoho.dataset.title = encodeURIComponent(title.value);
-                    if (window.location.hostname === 'xkinobot.github.io') {
-                        window.location.href = 'https://xkinobot.github.io/#' + yohoho.dataset.title;
-                        return;
-                    }
-                    window.location.hash = '#' + yohoho.dataset.title;
-                    document.title = title.value;
-                }
-                items = [];
-                return yo();
-            }
-        }
-    });
-</script>
