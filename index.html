@@ -9,12 +9,12 @@
 <script>
 function parse() {
             var yohoho = document.querySelector('#yohoho');
-            if (title && title.value && yohoho) {
+            if (title && title.value && xkinobot) {
                 if (/kinopoisk\.ru/i.test(title.value)) {
                     var exec = /(film\/|movie\/).*?([0-9]{3,7})\//gi.exec(title.value);
                     if (exec && exec[2]) {
                         yohoho.dataset.kinopoisk = exec[2];
-                        if (window.location.hostname === 'yohoho.cc') {
+                        if (window.location.hostname === 'xkinobot.github.io') {
                             window.location.href = 'https://xkinobot.github.io/#' + yohoho.dataset.kinopoisk;
                             return;
                         }
@@ -23,7 +23,7 @@ function parse() {
                     }
                 } else if (/^\d+$/.test(title.value)) {
                     yohoho.dataset.kinopoisk = title.value;
-                    if (window.location.hostname === 'yohoho.cc') {
+                    if (window.location.hostname === 'xkinobot.github.io') {
                         window.location.href = 'https://xkinobot.github.io/#' + yohoho.dataset.kinopoisk;
                         return;
                     }
@@ -31,7 +31,7 @@ function parse() {
                     document.title = 'КиноПоиск: ' + yohoho.dataset.kinopoisk;
                 } else {
                     yohoho.dataset.title = encodeURIComponent(title.value);
-                    if (window.location.hostname === 'yohoho.cc') {
+                    if (window.location.hostname === 'xkinobot.github.io') {
                         window.location.href = 'https://xkinobot.github.io/#' + yohoho.dataset.title;
                         return;
                     }
