@@ -13,7 +13,7 @@
     <script src="//yohoho.cc/yo.js"></script>
      <script>
           if (location.search.split('name=')[1]){
-               document.title =  unescape('Смотреть: ' + location.search.split('name=')[1] + ' в @tgkinobot');
+               document.title =  'Смотреть: ' + decodeURI(location.search.split('name=')[1]) + ' в @tgkinobot';
           }
           else{
                document.title = 'Смотри кино в @tgkinobot';
