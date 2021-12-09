@@ -1,14 +1,7 @@
 body{
+    height: 25vh;
+    width: 15rem;
     margin:0;
-    padding:0;
+    padding:0rem;
     background:#151515;
-}
-div {
-/* 25% of viewport */
-  height: 25vh;
-  width: 15rem;
-  background-color: #222;
-  color: #eee;
-  font-family: monospace;
-  padding: 0rem;
 }
