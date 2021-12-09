@@ -27,7 +27,9 @@
           window.onload = function() {
             if (document.querySelector("#yohoho-iframe").getAttribute("src") === undefined || document.querySelector("#yohoho-iframe").getAttribute("src") === null){
                  var myAnchor = document.getElementById("yohoho");
-                 var mySpan = "<div data-include='error.html'></div>";   
+                 var mySpan = document.createElement("link");
+                 mySpan.setAttribute(rel, "import");
+                 mySpan.setAttribute(href, "/error.html");
                  myAnchor.parentNode.replaceChild(mySpan, myAnchor);
             }};
      </script>
