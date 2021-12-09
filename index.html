@@ -13,9 +13,8 @@
     <script src="//yohoho.cc/yo.js"></script>
      <script>
            window.onload = function() {
-           var lsls = document.evaluate('/html/head/title', document, null, XPathResult.ANY_TYPE, null);
-           var title = lsls.iterateNext();
-           document.title = title.textContent + '@tgkinobot'
+           var lsls = document.querySelector("head > title")
+           document.title = + '@tgkinobot'
            };
      </script>
      <link rel="stylesheet" href="style.css"></div>
