@@ -22,10 +22,13 @@
                document.title = 'Смотри кино в @tgkinobot';
           }          
      </script>
-     <script>
-           if (!document.querySelector("#yohoho-iframe").getAttribute("src")){
-               document.body = "<p style="font-family: 'Montserrat', sans-serif; color: white;">В данный момент фильм отсутствует.</p>"
-          }
+    <script type="text/JavaScript">
+       if (!document.querySelector("#yohoho-iframe").getAttribute("src")){
+            var myAnchor = document.getElementById("yohoho");
+            var mySpan = document.createElement("<p style="font-family: 'Montserrat', sans-serif; color: white;"></p>");
+            mySpan.innerHTML = "В данный момент фильм отсутствует.";
+            myAnchor.parentNode.replaceChild(mySpan, myAnchor);
+       }
      </script>
      <link rel="stylesheet" href="style.css"></div>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6056680701285361"
