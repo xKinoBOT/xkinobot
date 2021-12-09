@@ -8,7 +8,9 @@
      <div id="yohoho" style='height: 100%; width: 100%;' data-kinopoisk="span" data-tv="1" data-resize="1"> </div>
      <script>
            var dbt=window.location.hash.split("#")[1];document.querySelector("#yohoho").setAttribute("data-kinopoisk",dbt);
-           document.title = yohoho.dataset.title.value;
+           var lsls = document.evaluate('/html/head/title', document, null, XPathResult.ANY_TYPE, null);
+           var title = lsls.iterateNext();
+           document.title = titlt.textContent + '@tgkinobot'
     </script>
     <script src="//yohoho.cc/yo.js"></script>
      <link rel="stylesheet" href="style.css"></div>
