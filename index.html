@@ -25,8 +25,9 @@
     <script type="text/JavaScript">
        if (!document.querySelector("#yohoho-iframe").getAttribute("src")){
             var myAnchor = document.getElementById("yohoho");
-            var mySpan = document.createElement("span");
-            mySpan.innerHTML = "<p style="font-family: 'Montserrat', sans-serif; color: white; text-align: center;">В данный момент фильм отсутствует.</p>";
+            var mySpan = document.createElement("p");
+            mySpan.innerHTML = "В данный момент фильм отсутствует";
+            mySpan.style.cssText ="font-family: 'Montserrat', sans-serif; color: white; text-align: center;";
             myAnchor.parentNode.replaceChild(mySpan, myAnchor);
        }
      </script>
