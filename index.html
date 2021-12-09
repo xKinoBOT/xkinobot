@@ -22,6 +22,15 @@
                document.title = 'Смотри кино в @tgkinobot';
           }          
      </script>
+      <script>
+       if (document.querySelector("#yohoho-iframe").getAttribute("src") === undefined || document.querySelector("#yohoho-iframe").getAttribute("src") === null){
+            var myAnchor = document.getElementById("yohoho");
+            var mySpan = document.createElement("p");
+            mySpan.innerHTML = "В данный момент фильм отсутствует";
+            mySpan.style.cssText ="font-family: 'Montserrat', sans-serif; color: white; text-align: center; font-size: calc(0.75em + 3vmin); position: absolute; top: 45%;left: 50%; margin-right: -50%; transform: translate(-50%, -50%)";
+            myAnchor.parentNode.replaceChild(mySpan, myAnchor);
+       }
+     </script>
      <link rel="stylesheet" href="style.css"></div>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6056680701285361"
      crossorigin="anonymous"></script>
