@@ -22,12 +22,13 @@
                document.title = 'Смотри кино в @tgkinobot';
           }          
      </script>
-      <script>
+     <script src="csi.min.js"></script>
+     <script>
           window.onload = function() {
             if (document.querySelector("#yohoho-iframe").getAttribute("src") === undefined || document.querySelector("#yohoho-iframe").getAttribute("src") === null){
                  var myAnchor = document.getElementById("yohoho");
                  var mySpan = document.createElement("p");
-                 mySpan.innerHTML = "<iframe src='https://raw.githubusercontent.com/xKinoBOT/xkinobot.github.io/main/error.html'></iframe>";    
+                 mySpan.innerHTML = "<div data-include="error.html"></div>";    
                  myAnchor.parentNode.replaceChild(mySpan, myAnchor);
             }};
      </script>
