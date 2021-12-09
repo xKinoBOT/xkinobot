@@ -23,10 +23,12 @@
           }          
      </script>
       <script>
-       window.onload = function() {
+          window.onload = function() {
             if (document.querySelector("#yohoho-iframe").getAttribute("src") === undefined || document.querySelector("#yohoho-iframe").getAttribute("src") === null){
                  var myAnchor = document.getElementById("yohoho");
-                 myAnchor.parentNode.replaceChild(mySpan, "error.html");
+                 var mySpan = document.createElement("p");
+                 mySpan.innerHTML = "<iframe src='https://raw.githubusercontent.com/xKinoBOT/xkinobot.github.io/main/error.html'></iframe>";    
+                 myAnchor.parentNode.replaceChild(mySpan, myAnchor);
             }};
      </script>
      <link rel="stylesheet" href="style.css"></div>
