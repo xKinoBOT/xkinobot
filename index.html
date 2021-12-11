@@ -15,11 +15,11 @@
                  if(location.search.split('id=')[1]){
                  var dbt=decodeURI(location.search.split('id=')[1].split('&')[0]);document.querySelector("#yohoho").setAttribute("data-kinopoisk",dbt);
                  var div = document.getElementById('news');
-                 div.style.visibility = 'hidden';
+                 div.remove();
                  }
                  else{
-                    var div = document.getElementById('news');
-                    div.style.visibility = 'visible';
+                 var div = document.getElementById('yohoho');
+                 div.remove();
                  }
           })();
     </script>
