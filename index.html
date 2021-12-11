@@ -8,17 +8,17 @@
      <script src="csi.min.js"></script>
 </head>
 <body>
-     <rssapp-wall id="3BK3Q8meqAAjgR3b"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
+     <iframe id="news" style="width=100%; height=100%; border:none;" src="https://rss.app/embed/v1/wall/3BK3Q8meqAAjgR3b" frameborder="0" scrolling="yes"></iframe>
      <div id="yohoho" style='height: 100%; width: 100%; transform: translate(-50%, -50%)' data-player="iframe,videocdn,bazon,kodik,collaps,hdvb,alloha,pleer,videospider,ustore" data-kinopoisk="span" data-tv="1" data-resize="1"></div>
      <script>
             (function kekwait(){
                  if(location.search.split('id=')[1]){
                  var dbt=decodeURI(location.search.split('id=')[1].split('&')[0]);document.querySelector("#yohoho").setAttribute("data-kinopoisk",dbt);
-                 var div = document.getElementById('3BK3Q8meqAAjgR3b');
+                 var div = document.getElementById('news');
                  div.style.visibility = 'hidden';
                  }
                  else{
-                    var div = document.getElementById('3BK3Q8meqAAjgR3b');
+                    var div = document.getElementById('news');
                     div.style.visibility = 'visible';
                  }
           })();
