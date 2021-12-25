@@ -3,18 +3,19 @@
 <head>
      <base href="https://xkinobot.github.io">
      <meta charset="utf-8"/>
-     <meta name="my_id" content="552">
      <meta http-equiv="Access-Control-Allow-Origin" content="*">
      <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes"/>
 </head>
 <body>
-     <div id="yohoho" style='height: 100%; width: 100%; position: absolute; transform: translate(-50%, -50%);' data-videocdn="etnnfFLBQwsZtgZFnDIUqUu13NICBMGH" data-player="iframe,videocdn,bazon,kodik,collaps,hdvb,pleer,videospider,ustore" data-kinopoisk="span" data-tv="1" data-resize="1"></div>
-     <script type="text/javascript">
-                 if(location.search.split('id=')[1]){
-                      var dbt=decodeURI(location.search.split('id=')[1].split('&')[0]);document.querySelector("#yohoho").setAttribute("data-kinopoisk",dbt);
-                 }
-    </script>
-    <script type="text/javascript" src="yo.js"></script>
+     <div class="uitools" id="tgkinobot" style="height:100%;width:100%;background-image: url('//pleer.videoplayers.club/web/img/loader.gif');background-repeat: no-repeat;background-position: center;background-color: #ccc;"></div>
+     <script>
+     var dbt=decodeURI(location.search.split('id=')[1].split('&')[0]);
+     var dataUrl=window.location.href;
+     var my_script_play = document.createElement("script");
+     my_script_play.setAttribute("src","//pleer.videoplayers.club/get_player?w=100%&h=100%&type=widget&kp_id=dbt&players=videocdn,bazon,kodik&r_id=tgkinobot&vni=Плеер #1&vti=etnnfFLBQwsZtgZFnDIUqUu13NICBMGH&vdi=&bni=Плеер #2&bti=8bc423454626dc1ba0db6dcca6d89629&bdi=&koni=Плеер #3&koti=&kodi=&ru="+dataUrl);
+     my_script_play.async = true;
+     document.head.appendChild(my_script_play);
+     </script>
      <script type="text/javascript">
           if (location.search.split('name=')[1]){
                document.title =  'Смотреть: ' + decodeURI(location.search.split('name=')[1].split('&')[0]) + ' в @tgkinobot';
